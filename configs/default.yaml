@@ -1,0 +1,185 @@
+# E-GAN Radio Anomaly Detection - Default Configuration
+# 这是一套"能快速跑通"的默认参数
+
+# ============================================================
+# 数据路径配置
+# ============================================================
+data:
+  # 数据集根目录
+  root_dir: "dataset"
+  
+  # 各子目录相对于 root_dir 的路径
+  train_normal_dir: "train/normal"
+  val_normal_dir: "val/normal"
+  val_anomaly_dir: "val/anomaly"
+  test_normal_dir: "test/normal"
+  test_anomaly_dir: "test/anomaly"
+  
+  # 是否在 .IQ 文件不存在时尝试读取 .IQ.wav
+  use_wav_fallback: false
+  
+  # 文件过滤条件 (null 表示不过滤)
+  filter_center_freq: null       # 例如: 161.975e6
+  filter_sample_rate: null       # 例如: 64000
+  filter_bandwidth: null         # 例如: 30000
+  
+  # 是否按 metadata 分组 (未来扩展用)
+  group_by_metadata: false
+
+# ============================================================
+# IQ 文件读取参数
+# ============================================================
+iq:
+  # 数据类型: int16, int8, float32
+  dtype: "int16"
+  
+  # 是否交织存储 I,Q,I,Q,...
+  interleaved: true
+  
+  # 字节序: true=little-endian, false=big-endian
+  little_endian: true
+  
+  # 位深度 (用于归一化参考)
+  bit_depth: 16
+  
+  # 是否去除直流分量
+  remove_dc: true
+  
+  # 归一化方式: "rms", "max", "none"
+  normalize_mode: "rms"
+
+# ============================================================
+# 切窗参数
+# ============================================================
+windowing:
+  # 每个窗口的采样点数
+  # 对于 64kHz 采样率，8192 点约 128ms
+  # 对于 320kHz 采样率，8192 点约 25.6ms
+  window_size_samples: 8192
+  
+  # 窗口滑动步长 (50% overlap)
+  hop_size_samples: 4096
+
+# ============================================================
+# Spectrogram 参数
+# ============================================================
+spectrogram:
+  # FFT 点数
+  n_fft: 256
+  
+  # STFT hop length
+  hop_length: 64
+  
+  # 窗口长度 (null 则等于 n_fft)
+  win_length: null
+  
+  # 窗函数类型
+  window_type: "hann"
+  
+  # 功率谱类型: 1=幅度, 2=功率
+  power: 1.0
+  
+  # 是否使用 log 压缩 (log1p)
+  use_log: true
+  
+  # 输出 spectrogram 尺寸
+  resize_h: 64
+  resize_w: 64
+  
+  # 归一化方式: "minmax", "standard", "none"
+  normalize: "minmax"
+
+# ============================================================
+# 模型参数
+# ============================================================
+model:
+  # 隐空间维度
+  latent_dim: 128
+  
+  # 基础通道数
+  base_channels: 32
+  
+  # 是否使用 spectral normalization
+  use_spectral_norm: true
+
+# ============================================================
+# 训练参数
+# ============================================================
+train:
+  # 批大小 (轻量级，适合显存较小的GPU)
+  batch_size: 32
+  
+  # 数据加载线程数
+  num_workers: 4
+  
+  # 训练轮数
+  epochs: 100
+  
+  # 学习率
+  learning_rate: 0.0002
+  
+  # Adam betas
+  betas: [0.5, 0.999]
+  
+  # 对抗损失权重
+  adv_weight: 1.0
+  
+  # 重构损失权重 (通常设较大以稳定训练)
+  recon_weight: 50.0
+  
+  # 标签平滑
+  label_smoothing: 0.1
+  
+  # 梯度裁剪
+  gradient_clip_norm: 1.0
+  
+  # 早停耐心值 (设为 null 禁用)
+  early_stopping_patience: 20
+  
+  # 训练设备
+  device: "cuda"
+  
+  # 随机种子
+  seed: 42
+  
+  # 保存频率 (每多少 epoch 保存一次)
+  save_interval: 10
+  
+  # 验证频率
+  val_interval: 5
+
+# ============================================================
+# 异常分数与阈值参数
+# ============================================================
+score:
+  # 综合分数中判别器分数的权重
+  # A = (1-lambda) * AR + lambda * AD
+  lambda_score: 0.5
+  
+  # 目标误报率 (False Positive Rate)
+  target_pfa: 0.05
+  
+  # 文件级聚合方法: "max", "mean", "topk_mean", "abnormal_ratio"
+  aggregation_method: "topk_mean"
+  
+  # top-k 比例 (仅 topk_mean 使用)
+  topk_ratio: 0.1
+
+# ============================================================
+# 输出参数
+# ============================================================
+output:
+  # 输出根目录
+  output_dir: "outputs"
+  
+  # 是否保存可视化图表
+  save_figures: true
+  
+  # 是否保存重构示例
+  save_recon_examples: true
+  
+  # 是否保存定位热力图
+  save_localization_maps: true
+  
+  # 保存示例的数量
+  num_examples_to_save: 10

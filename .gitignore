@@ -34,3 +34,7 @@ outputs/
 .claude/
 .DS_Store
 *.log
+
+# Data files (too large for GitHub)
+data/
+dataset/

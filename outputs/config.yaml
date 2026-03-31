@@ -1,0 +1,64 @@
+data:
+  filter_bandwidth: null
+  filter_center_freq: null
+  filter_sample_rate: null
+  group_by_metadata: false
+  root_dir: dataset
+  test_anomaly_dir: test/anomaly
+  test_normal_dir: test/normal
+  train_normal_dir: train/normal
+  use_wav_fallback: false
+  val_anomaly_dir: val/anomaly
+  val_normal_dir: val/normal
+iq:
+  bit_depth: 16
+  dtype: int16
+  interleaved: true
+  little_endian: true
+  normalize_mode: rms
+  remove_dc: true
+model:
+  base_channels: 32
+  latent_dim: 128
+  use_spectral_norm: true
+output:
+  num_examples_to_save: 10
+  output_dir: outputs
+  save_figures: true
+  save_localization_maps: true
+  save_recon_examples: true
+score:
+  aggregation_method: topk_mean
+  lambda_score: 0.5
+  target_pfa: 0.05
+  topk_ratio: 0.1
+spectrogram:
+  hop_length: 64
+  n_fft: 256
+  normalize: minmax
+  power: 1.0
+  resize_h: 64
+  resize_w: 64
+  use_log: true
+  win_length: null
+  window_type: hann
+train:
+  adv_weight: 1.0
+  batch_size: 16
+  betas:
+  - 0.5
+  - 0.999
+  device: cpu
+  early_stopping_patience: null
+  epochs: 10
+  gradient_clip_norm: 1.0
+  label_smoothing: 0.1
+  learning_rate: 0.0002
+  num_workers: 0
+  recon_weight: 50.0
+  save_interval: 5
+  seed: 42
+  val_interval: 2
+windowing:
+  hop_size_samples: 4096
+  window_size_samples: 8192

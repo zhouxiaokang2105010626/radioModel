@@ -1,0 +1,26 @@
+2026-03-30 18:46:33,826 - eval - INFO - 日志文件: outputs/logs/eval_20260330_184633.log
+2026-03-30 18:46:33,826 - eval - INFO - 配置文件: configs/default.yaml
+2026-03-30 18:46:33,994 - eval - INFO - 使用设备: cuda
+2026-03-30 18:46:33,995 - eval - INFO - 加载模型...
+2026-03-30 18:46:34,297 - eval - INFO - 加载 checkpoint: outputs/checkpoints/checkpoint_final_best.pth
+2026-03-30 18:46:34,297 - eval - INFO - 加载阈值: 0.3050
+2026-03-30 18:46:34,298 - eval - INFO - 创建数据集...
+2026-03-30 18:46:54,950 - eval - INFO - 评估测试集...
+2026-03-30 18:46:55,831 - eval - INFO - 正常样本: 2063 窗口
+2026-03-30 18:46:55,879 - eval - INFO - 计算窗口级指标...
+2026-03-30 18:46:55,884 - eval - INFO - Window-level 指标:
+2026-03-30 18:46:55,885 - eval - INFO -   ROC-AUC: nan
+2026-03-30 18:46:55,885 - eval - INFO -   PR-AUC: nan
+2026-03-30 18:46:55,885 - eval - INFO -   Accuracy: 0.9496
+2026-03-30 18:46:55,885 - eval - INFO -   F1: nan
+2026-03-30 18:46:55,885 - eval - INFO -   Precision: nan
+2026-03-30 18:46:55,885 - eval - INFO -   Recall: nan
+2026-03-30 18:46:55,885 - eval - INFO -   FPR: 0.0504
+2026-03-30 18:46:56,457 - eval - INFO - 计算文件级指标...
+2026-03-30 18:46:56,461 - eval - INFO - File-level 指标:
+2026-03-30 18:46:56,461 - eval - INFO -   ROC-AUC: nan
+2026-03-30 18:46:56,461 - eval - INFO -   PR-AUC: nan
+2026-03-30 18:46:56,461 - eval - INFO -   Accuracy: 1.0000
+2026-03-30 18:46:56,461 - eval - INFO -   F1: nan
+2026-03-30 18:46:56,748 - eval - INFO - 完整指标已保存: outputs/metrics.json
+2026-03-30 18:46:56,748 - eval - INFO - 评估完成!

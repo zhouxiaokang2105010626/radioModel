@@ -1,0 +1,2 @@
+file_path,center_freq_hz,bandwidth_hz,sample_rate_hz,n_windows,aggregate_method,file_score,score_max,score_mean,score_std,true_label,threshold,pred_label
+dataset/test/normal/161.975MHz_30kHz_64000_16_20250804171800.IQ,161975000.0,30000.0,64000.0,2063,topk_mean,0.3013075436781911,0.45729416608810425,0.06387759954437218,0.08923305436116337,0,0.3050431877374649,0

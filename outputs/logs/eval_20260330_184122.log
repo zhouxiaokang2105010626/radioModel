@@ -1,0 +1,9 @@
+2026-03-30 18:41:22,250 - eval - INFO - 日志文件: outputs/logs/eval_20260330_184122.log
+2026-03-30 18:41:22,250 - eval - INFO - 配置文件: configs/default.yaml
+2026-03-30 18:41:22,415 - eval - INFO - 使用设备: cuda
+2026-03-30 18:41:22,415 - eval - INFO - 加载模型...
+2026-03-30 18:41:22,718 - eval - INFO - 加载 checkpoint: outputs/checkpoints/checkpoint_final_best.pth
+2026-03-30 18:41:22,718 - eval - INFO - 加载阈值: 0.3050
+2026-03-30 18:41:22,718 - eval - INFO - 创建数据集...
+2026-03-30 18:41:22,720 - eval - INFO - 评估测试集...
+2026-03-30 18:41:22,720 - eval - ERROR - 测试集为空!

@@ -1,0 +1,4 @@
+2026-03-30 12:24:17,028 - train - INFO - 日志文件: outputs\logs\train_20260330_122417.log
+2026-03-30 12:24:17,028 - train - INFO - 配置文件: configs/demo.yaml
+2026-03-30 12:24:17,043 - train - INFO - 使用设备: cpu
+2026-03-30 12:24:17,043 - train - INFO - 创建数据集...

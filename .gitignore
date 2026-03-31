@@ -30,7 +30,6 @@ wheels/
 *.swo
 
 # Project specific
-outputs/
 .claude/
 .DS_Store
 *.log

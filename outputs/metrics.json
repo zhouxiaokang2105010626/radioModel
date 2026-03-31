@@ -1,0 +1,86 @@
+{
+  "threshold": 0.3050431877374649,
+  "threshold_info": {
+    "threshold_ar": 0.12428013235330576,
+    "threshold_ad": 0.4835555285215373,
+    "threshold_total": 0.3050431877374649,
+    "target_pfa": 0.05,
+    "lambda_score": 0.5,
+    "n_samples": 2063,
+    "score_stats": {
+      "ar_mean": 0.040593653555482744,
+      "ar_std": 0.037296891407648296,
+      "ar_min": 0.0021106114145368338,
+      "ar_max": 0.2348359227180481,
+      "ad_mean": 0.08716150351912433,
+      "ad_std": 0.1451719273598398,
+      "total_mean": 0.06387757851275644,
+      "total_std": 0.08923313828183564
+    }
+  },
+  "window_level": {
+    "accuracy": 0.9495879786718371,
+    "precision": NaN,
+    "recall": NaN,
+    "f1": NaN,
+    "roc_auc": NaN,
+    "pr_auc": NaN,
+    "confusion_matrix": [
+      [
+        1959,
+        104
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "tn": 1959,
+    "fp": 104,
+    "fn": 0,
+    "tp": 0,
+    "fpr": 0.050412021328162866,
+    "tpr": 0.0
+  },
+  "file_level": {
+    "accuracy": 1.0,
+    "precision": NaN,
+    "recall": NaN,
+    "f1": NaN,
+    "roc_auc": NaN,
+    "pr_auc": NaN,
+    "confusion_matrix": [
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ],
+    "tn": 1,
+    "fp": 0,
+    "fn": 0,
+    "tp": 0,
+    "fpr": 0.0,
+    "tpr": 0.0
+  },
+  "n_windows_total": 2063,
+  "n_files_total": 1,
+  "aggregation_method": "topk_mean",
+  "score_distribution": {
+    "normal": {
+      "count": 2063,
+      "mean": 0.06387759954437218,
+      "std": 0.08923305436116337,
+      "min": 0.00159511249512434,
+      "max": 0.45729416608810425,
+      "median": 0.02615402266383171,
+      "q25": 0.014859337825328112,
+      "q75": 0.057959217578172684,
+      "q95": 0.3050414502620697,
+      "q99": 0.3676983636617658
+    }
+  }
+}
